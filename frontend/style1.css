@@ -1,0 +1,135 @@
+/* --- Global Reset & Body --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #eef9f2, #f8f9fa);
+  color: #333;
+  
+  /* Flexbox to perfectly center the card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* --- Main Search Card --- */
+.search-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px 32px;
+  background: white;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Card Header --- */
+.search-card header {
+  margin-bottom: 30px;
+}
+
+.search-card h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  color: #2b9348; /* A nice green color */
+  margin-bottom: 10px;
+}
+
+.search-card h2 .fa-leaf {
+  margin-right: 10px;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* --- Form Elements --- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-wrapper {
+  width: 100%;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1.1em;
+  font-family: 'Roboto', sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #2b9348;
+  box-shadow: 0 0 0 3px rgba(43, 147, 72, 0.2);
+}
+
+button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #2b9348;
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #1f7035;
+  transform: translateY(-3px);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+}
+
+.example-text {
+  margin-top: 15px;
+  color: #888;
+  font-size: 0.9em;
+}
+
+/* --- Footer --- */
+footer {
+  position: absolute;
+  bottom: 20px;
+  color: #999;
+  font-size: 0.9em;
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (min-width: 480px) {
+  form {
+    flex-direction: row;
+  }
+}

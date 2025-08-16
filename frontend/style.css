@@ -1,0 +1,121 @@
+/* style.css */
+
+/* --- Universal Styles & Resets --- */
+* {
+    box-sizing: border-box; /* Makes layout math easier */
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Roboto', sans-serif; /* A clean font for body text */
+    background: linear-gradient(135deg, #eef9f2, #f8f9fa); /* Subtle green-to-white gradient */
+    color: #333;
+}
+
+/* --- Main Layout Container --- */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes header to top, footer to bottom */
+    align-items: center;
+    min-height: 100vh; /* Ensures it takes up at least the full screen height */
+    text-align: center;
+    padding: 20px;
+    
+    /* A simple fade-in animation on page load */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* --- Header & Typography --- */
+.page-header {
+    padding-top: 40px;
+}
+
+.site-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #2c5d3d; /* A deep, agricultural green */
+    letter-spacing: -2px; /* Tightens up the letters for a strong look */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.05); /* Adds subtle depth */
+}
+
+.subheading {
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: 300;
+    margin-top: -10px;
+}
+
+/* --- Main Content --- */
+.content-wrapper {
+    max-width: 650px;
+    margin: 2rem 0;
+}
+
+.explanation {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 3rem; /* Space above the button */
+}
+
+/* --- Call to Action Button --- */
+.cta-button {
+    display: inline-block;
+    background-color: #4CAF50; /* A vibrant, friendly green */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    
+    padding: 18px 80px; /* Wide padding */
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+    /* Smooth transitions for all properties */
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-5px) scale(1.05); /* Lifts and slightly enlarges the button */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* --- Footer --- */
+.page-footer {
+    padding-bottom: 20px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 600px) {
+    .site-title {
+        font-size: 3rem;
+    }
+    .subheading, .explanation {
+        font-size: 1rem;
+    }
+    .cta-button {
+        padding: 16px 40px;
+        width: 90%; /* Button takes up more screen width */
+    }
+}
