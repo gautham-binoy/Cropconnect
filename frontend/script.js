@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("DEBUG: Page loaded. Initializing scripts.");
 
     // --- CONFIGURATION ---
-    const BACKEND_URL = 'http://localhost:3001';
-
+    //localhost 
+    //const BACKEND_URL = 'http://localhost:3001';
+    // Live Render URL
+    const BACKEND_URL = 'https://cropconnect-backend.onrender.com'; 
     // --- DOM ELEMENT REFERENCES ---
     const searchTitle = document.getElementById('search-title');
     const stateFilter = document.getElementById('state-filter');
