@@ -119,3 +119,48 @@ body, html {
         width: 90%; /* Button takes up more screen width */
     }
 }
+
+/* ADD THIS AT THE END OF YOUR style.css FILE */
+
+.language-switcher-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.language-switcher-container.top-right {
+    /* Helper for pages where it's not inside a flex container */
+    position: fixed;
+}
+
+.language-switcher-container i {
+    color: #555;
+    margin-right: 8px;
+}
+
+.language-switcher-container select {
+    border: none;
+    background: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.language-switcher-container select:focus {
+    outline: none;
+}
+
+.page-footer-absolute {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #999;
+    font-size: 0.9em;
+}

@@ -3,53 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CropConnect - Real-Time Crop Prices</title>
-
-  <!-- Google Fonts -->
+  <title data-translate-key="site_title">CropConnect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- Your Stylesheet -->
   <link rel="stylesheet" href="style1.css" />
+  <link rel="stylesheet" href="style.css"> <!-- Link to main style for switcher -->
 </head>
 <body>
-
-  <div class="search-card">
-    <header>
-      <h2><i class="fa-solid fa-leaf"></i> CropConnect</h2>
-      <p class="tagline">Get real-time market prices for your crops instantly.</p>
-    </header>
-
-    <form id="searchForm">
-      <div class="input-wrapper">
-        <input type="text" id="commoditySearch" placeholder="Enter crop name" required />
-      </div>
-      <button type="submit">
-        <span>Search</span>
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </form>
-    <p class="example-text">e.g : Potato, Onion, Wheat etc.</p>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 CropConnect. All rights reserved.</p>
-  </footer>
-
-  <script>
-    document.getElementById('searchForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const crop = document.getElementById('commoditySearch').value.trim();
-      if (crop) {
-        // Corrected the URL redirection using a template literal
-        window.location.href = `page2.html?commodity=${encodeURIComponent(crop)}`;
-      }
-    });
-  </script>
-
+    <div class="language-switcher-container top-right">
+        <i class="fa-solid fa-language"></i>
+        <select id="language-switcher">
+            <option value="en">English</option>
+            <option value="hi">हिन्दी</option>
+            <option value="ml">മലയാളം</option>
+        </select>
+    </div>
+    <div class="search-card">
+        <header>
+            <h2 data-translate-key="site_title"><i class="fa-solid fa-leaf"></i> CropConnect</h2>
+            <p class="tagline" data-translate-key="tagline">Get real-time market prices for your crops instantly.</p>
+        </header>
+        <form id="searchForm">
+            <div class="input-wrapper">
+                <input type="text" id="commoditySearch" placeholder="Enter crop name" required data-translate-key="search_placeholder"/>
+            </div>
+            <button type="submit">
+                <span data-translate-key="search_button">Search</span>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+        <p class="example-text" data-translate-key="example_text">e.g : Potato, Onion, Wheat etc.</p>
+    </div>
+    <footer class="page-footer-absolute">
+        <p data-translate-key="footer_text">&copy; 2025 CropConnect. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          const crop = document.getElementById('commoditySearch').value.trim();
+          if (crop) {
+            window.location.href = `page2.html?commodity=${encodeURIComponent(crop)}`;
+          }
+        });
+    </script>
+    <script src="translations.js"></script>
+    <script src="language.js"></script>
 </body>
 </html>

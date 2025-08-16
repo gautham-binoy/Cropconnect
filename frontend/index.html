@@ -3,43 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to CropConnect</title>
-    
-    <!-- Google Fonts for a professional look -->
+    <title data-translate-key="site_title">CropConnect</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome for Icons (This is needed for the leaf logo) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Link to the single external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
+        <div class="language-switcher-container">
+            <i class="fa-solid fa-language"></i>
+            <select id="language-switcher">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="ml">മലയാളം</option>
+            </select>
+        </div>
         <header class="page-header">
-            <!-- LOGO ADDED HERE -->
-            <h1 class="site-title">
+            <h1 class="site-title" data-translate-key="site_title">
                 <i class="fa-solid fa-leaf"></i> CropConnect
             </h1>
-            <p class="subheading">Empowering Farmers with Real-Time Data</p>
+            <p class="subheading" data-translate-key="subheading">Empowering Farmers with Real-Time Data</p>
         </header>
-        
         <main class="content-wrapper">
-            <p class="explanation">
+            <p class="explanation" data-translate-key="explanation">
                 Your daily source for transparent agricultural market prices. We provide the critical information needed to get the best value for your crops, every single day.
             </p>
-            
-            <!-- This button should link to your search page (e.g., search.html) -->
-            <a href="index1.html" class="cta-button">View Market Prices</a>
+            <a href="index1.html" class="cta-button" data-translate-key="cta_button">View Market Prices</a>
         </main>
-
         <footer class="page-footer">
-            <p>&copy; 2025 CropConnect. All rights reserved.</p>
+            <p data-translate-key="footer_text">&copy; 2025 CropConnect. All rights reserved.</p>
         </footer>
     </div>
-
+    <script src="translations.js"></script>
+    <script src="language.js"></script>
 </body>
 </html>
