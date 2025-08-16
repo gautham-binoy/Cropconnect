@@ -24,9 +24,9 @@ const translations = {
     table_title: "Detailed Price Comparison",
     market_header: "Market",
     state_header: "State",
-    min_price_header: "Min Price (₹)",
-    max_price_header: "Max Price (₹)",
-    modal_price_header: "Modal Price (₹)"
+    min_price_header: "Min Price (₹ / Quintal)",   // MODIFIED
+    max_price_header: "Max Price (₹ / Quintal)",   // MODIFIED
+    modal_price_header: "Modal Price (₹ / Quintal)" // MODIFIED
   },
   // Hindi Translations
   hi: {
@@ -48,12 +48,12 @@ const translations = {
     filter_by_state: "राज्य द्वारा फ़िल्टर करें:",
     all_states: "सभी राज्य",
     apply_button: "लागू करें",
-    table_title: "विस्तृत मूल्य तुलना",
+     table_title: "विस्तृत मूल्य तुलना",
     market_header: "बाजार",
     state_header: "राज्य",
-    min_price_header: "न्यूनतम मूल्य (₹)",
-    max_price_header: "अधिकतम मूल्य (₹)",
-    modal_price_header: "मोडल मूल्य (₹)"
+    min_price_header: "न्यूनतम मूल्य (₹ / क्विंटल)", // MODIFIED
+    max_price_header: "अधिकतम मूल्य (₹ / क्विंटल)", // MODIFIED
+    modal_price_header: "मोडल मूल्य (₹ / क्विंटल)"  // MODIFIED
   },
   // Malayalam Translations
   ml: {
@@ -78,8 +78,11 @@ const translations = {
     table_title: "വിശദമായ വില താരതമ്യം",
     market_header: "വിപണി",
     state_header: "സംസ്ഥാനം",
-    min_price_header: "കുറഞ്ഞ വില (₹)",
-    max_price_header: " കൂടിയ വില (₹)",
-    modal_price_header: "മോഡൽ വില (₹)"
+    min_price_header: "കുറഞ്ഞ വില (₹ / ക്വിന്റൽ)",  // MODIFIED
+    max_price_header: " കൂടിയ വില (₹ / ക്വിന്റൽ)", // MODIFIED
+    modal_price_header: "മോഡൽ വില (₹ / ക്വിന്റൽ)"   // MODIFIED
   }
 };
+
+
+

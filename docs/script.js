@@ -136,7 +136,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Unchanged functions pasted below for completeness ---
     function renderTable() { priceTableBody.innerHTML = ''; allMarketData.forEach(item => { const row = document.createElement('tr'); row.innerHTML = `<td>${item.market}</td><td>${item.state}</td><td>${item.min_price.toFixed(2)}</td><td>${item.max_price.toFixed(2)}</td><td><strong>${item.modal_price.toFixed(2)}</strong></td>`; priceTableBody.appendChild(row); }); }
-    function renderChart() { const chartData = [...allMarketData].sort((a,b) => b.modal_price - a.modal_price).slice(0, 15); const labels = chartData.map(item => item.market); if (priceChart) priceChart.destroy(); priceChart = new Chart(chartCanvas, { type: 'bar', data: { labels: labels, datasets: [ { label: 'Min Price (₹)', data: chartData.map(item => item.min_price), backgroundColor: 'rgba(255, 159, 64, 0.7)' }, { label: 'Max Price (₹)', data: chartData.map(item => item.max_price), backgroundColor: 'rgba(75, 192, 192, 0.7)' }, { label: 'Modal Price (₹)', data: chartData.map(item => item.modal_price), backgroundColor: 'rgba(54, 162, 235, 0.7)' } ] }, options: { responsive: true, plugins: { legend: { position: 'top' }, title: { display: true, text: 'Top 15 Markets by Modal Price' } }, scales: { y: { beginAtZero: true, title: { display: true, text: 'Price in Rupees (₹)' } } } } }); }
+    // In script.js, replace the existing renderChart function
+
+function renderChart() {
+    // Sort a copy of the data by price for the chart, limited to top 15
+    const chartData = [...allMarketData].sort((a,b) => b.modal_price - a.modal_price).slice(0, 15);
+    const labels = chartData.map(item => item.market);
+    
+    if (priceChart) priceChart.destroy(); // Clear old chart before drawing new one
+
+    priceChart = new Chart(chartCanvas, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                // --- MODIFIED LABELS ---
+                { label: 'Min Price (₹ / Quintal)', data: chartData.map(item => item.min_price), backgroundColor: 'rgba(255, 159, 64, 0.7)' },
+                { label: 'Max Price (₹ / Quintal)', data: chartData.map(item => item.max_price), backgroundColor: 'rgba(75, 192, 192, 0.7)' },
+                { label: 'Modal Price (₹ / Quintal)', data: chartData.map(item => item.modal_price), backgroundColor: 'rgba(54, 162, 235, 0.7)' }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: { 
+                legend: { position: 'top' }, 
+                title: { display: true, text: 'Top 15 Markets by Modal Price' } 
+            },
+            scales: { 
+                y: { 
+                    beginAtZero: true, 
+                    // --- MODIFIED AXIS TITLE ---
+                    title: { display: true, text: 'Price in Rupees (₹ / Quintal)' } 
+                } 
+            }
+        }
+    });
+}
     function populateStateFilter(records) { if (stateFilter.options.length > 1 || !records) return; const states = [...new Set(records.map(rec => rec.state))].sort(); states.forEach(state => { const option = document.createElement('option'); option.value = state; option.textContent = state; stateFilter.appendChild(option); }); }
     function sortData() { allMarketData.sort((a, b) => { const valA = a[currentSort.key]; const valB = b[currentSort.key]; let comparison = (typeof valA === 'string') ? valA.localeCompare(valB) : valA - valB; return currentSort.order === 'asc' ? comparison : -comparison; }); }
     function handleSort(e) { const newKey = e.target.closest('[data-sort]')?.dataset.sort; if (!newKey) return; if (currentSort.key === newKey) { currentSort.order = currentSort.order === 'asc' ? 'desc' : 'asc'; } else { currentSort.key = newKey; currentSort.order = 'asc'; } sortData(); renderTable(); document.querySelectorAll('.results-table thead th').forEach(th => th.classList.remove('sorted-asc', 'sorted-desc')); e.target.closest('[data-sort]').classList.add(currentSort.order === 'asc' ? 'sorted-asc' : 'sorted-desc'); }

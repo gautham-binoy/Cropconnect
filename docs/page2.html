@@ -48,15 +48,22 @@
         <div id="table-container" class="table-container hidden">
             <h3 data-translate-key="table_title">Detailed Price Comparison</h3>
             <table class="results-table">
-                <thead>
-                    <tr>
-                        <th data-sort="market" data-translate-key="market_header">Market <i class="fa-solid fa-sort"></i></th>
-                        <th data-sort="state" data-translate-key="state_header">State <i class="fa-solid fa-sort"></i></th>
-                        <th data-sort="min_price" data-translate-key="min_price_header">Min Price (₹) <i class="fa-solid fa-sort"></i></th>
-                        <th data-sort="max_price" data-translate-key="max_price_header">Max Price (₹) <i class="fa-solid fa-sort"></i></th>
-                        <th data-sort="modal_price" data-translate-key="modal_price_header">Modal Price (₹) <i class="fa-solid fa-sort"></i></th>
-                    </tr>
-                </thead>
+                <!-- In page2.html -->
+<table class="results-table">
+    <thead>
+        <tr>
+            <!-- --- MODIFIED FALLBACK TEXT --- -->
+            <th data-sort="market" data-translate-key="market_header">Market <i class="fa-solid fa-sort"></i></th>
+            <th data-sort="state" data-translate-key="state_header">State <i class="fa-solid fa-sort"></i></th>
+            <th data-sort="min_price" data-translate-key="min_price_header">Min Price (₹ / Quintal) <i class="fa-solid fa-sort"></i></th>
+            <th data-sort="max_price" data-translate-key="max_price_header">Max Price (₹ / Quintal) <i class="fa-solid fa-sort"></i></th>
+            <th data-sort="modal_price" data-translate-key="modal_price_header">Modal Price (₹ / Quintal) <i class="fa-solid fa-sort"></i></th>
+        </tr>
+    </thead>
+    <tbody id="priceTableBody">
+        <!-- Data will be inserted here by JavaScript -->
+    </tbody>
+</table>
                 <tbody id="priceTableBody"></tbody>
             </table>
         </div>
