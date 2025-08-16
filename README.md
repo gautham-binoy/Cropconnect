@@ -79,3 +79,9 @@ To run this project locally, you will need to set up the backend server and then
 3.  **Open the main page:** Navigate to the frontend folder and open the `index.html` file directly in your web browser (e.g., Chrome, Firefox).
 
 4.  The application is now running and will communicate with your local backend server.
+
+## ⚠️ Important Note on API Rate Limits
+
+This project uses the free tier of the Google Gemini API to generate AI-powered market summaries. The free tier has a daily request limit (currently around 50 requests/day).
+
+If the "AI Market Report" section shows an error or fails to load, it is likely because this daily limit has been reached due to testing or high usage. The feature will automatically start working again once the daily quota resets. The core functionality of fetching and displaying market prices from Data.gov.in will not be affected.
