@@ -1,0 +1,205 @@
+/* style2.css */
+
+/* --- Global Reset & Body --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #eef9f2, #f8f9fa);
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Header --- */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.home-link {
+    text-decoration: none;
+}
+
+.page-header h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    color: #2b9348;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+#search-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* --- Main Results Container --- */
+.results-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Loading Spinner --- */
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #2b9348;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 50px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Error Message --- */
+.error-message {
+    text-align: center;
+    padding: 30px;
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #c62828;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+/* --- Chart and Table Containers --- */
+.chart-container, .table-container {
+    padding: 25px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.table-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+/* --- Data Table --- */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+.results-table th, .results-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.results-table thead th {
+    background-color: #f7f7f7;
+    font-weight: 500;
+}
+
+.results-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.price-increase { color: #2e7d32; }
+.price-decrease { color: #c62828; }
+.price-stagnant { color: #555; }
+
+/* --- Utility Class --- */
+.hidden {
+    display: none;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #999;
+    font-size: 0.9em;
+}
+
+/* --- ADD THESE NEW STYLES AT THE END OF style2.css --- */
+
+/* --- Filter Controls --- */
+.filter-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-controls label {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.filter-controls select, .filter-controls button {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.filter-controls button {
+    background-color: #2b9348;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.filter-controls button:hover {
+    background-color: #1f7035;
+}
+
+/* --- Sortable Table Headers --- */
+.results-table thead th {
+    cursor: pointer;
+    position: relative;
+    user-select: none; /* Prevents text selection on click */
+}
+
+.results-table thead th:hover {
+    background-color: #e9e9e9;
+}
+
+.results-table thead th .fa-sort {
+    margin-left: 8px;
+    color: #999;
+}
+
+/* Style for the currently sorted column */
+.results-table thead th.sorted-asc,
+.results-table thead th.sorted-desc {
+    background-color: #dcedde;
+}

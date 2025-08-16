@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropConnect - Price Results</title>
+
+    <!-- Google Fonts & Font Awesome (same as other pages) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Link to the stylesheet -->
+    <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="home-link">
+            <h2><i class="fa-solid fa-leaf"></i> CropConnect</h2>
+        </a>
+        <h1 id="search-title">Price Results for...</h1>
+    </header>
+    
+    <!-- --- NEW FILTER SECTION --- -->
+    <div class="filter-controls">
+        <div class="filter-group">
+            <label for="state-filter">Filter by State:</label>
+            <select id="state-filter">
+                <option value="">All States</option>
+                <!-- States will be populated by JavaScript -->
+            </select>
+        </div>
+        <button id="apply-filters-btn">Apply</button>
+    </div>
+    <!-- --- END OF NEW SECTION --- -->
+
+    <main class="results-container">
+        <!-- Loading Spinner -->
+        <div id="loader" class="loader"></div>
+
+        <!-- Error Message Placeholder (initially hidden) -->
+        <div id="error-message" class="error-message hidden"></div>
+
+        <!-- Chart Container -->
+        <div id="chart-container" class="chart-container hidden">
+            <canvas id="priceChart"></canvas>
+        </div>
+
+        <!-- Data Table Container -->
+        <div id="table-container" class="table-container hidden">
+            <h3>Detailed Price Comparison</h3>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <!-- --- MODIFIED, SORTABLE TABLE HEADERS --- -->
+                        <th data-sort="market">Market <i class="fa-solid fa-sort"></i></th>
+                        <th data-sort="state">State <i class="fa-solid fa-sort"></i></th>
+                        <th data-sort="min_price">Min Price (₹) <i class="fa-solid fa-sort"></i></th>
+                        <th data-sort="max_price">Max Price (₹) <i class="fa-solid fa-sort"></i></th>
+                        <th data-sort="modal_price">Modal Price (₹) <i class="fa-solid fa-sort"></i></th>
+                    </tr>
+                </thead>
+                <tbody id="priceTableBody">
+                    <!-- Data will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CropConnect. All rights reserved.</p>
+    </footer>
+
+    <!-- Chart.js Library (required for the chart) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Your new custom script file -->
+    <script src="script.js"></script>
+</body>
+</html>
